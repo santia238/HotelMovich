@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel - Alimentos y Bebidas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Hotel El Refugio</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#desayuno">Desayuno</a></li>
+                <li><a href="#ebano-cena">Ebano Cena</a></li>
+                <li><a href="#ebano-almuerzo">Ebano Almuerzo</a></li>
+                <li><a href="#roomservice">Room Service</a></li>
+                <li><a href="#saman-cafe-am">Saman Café AM</a></li>
+                <li><a href="#saman-cafe-pm">Saman Café PM</a></li>
+                <li><a href="#tipsy-bird-bar">Tipsy Bird Bar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="desayuno">
+            <h2>Formulario - Desayuno</h2>
+            <form id="form-desayuno" action="enviar_correo.php" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Repetir la estructura del formulario para otras áreas -->
+        <section id="ebano-cena">
+            <h2>Formulario - Ebano Cena</h2>
+            <form id="form-ebano-cena" action="enviar_correo.php" method="POST">
+                <!-- Campos específicos para Ebano Cena -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Puedes agregar más secciones aquí -->
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hotel El Refugio. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
