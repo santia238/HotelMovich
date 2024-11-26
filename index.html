@@ -1,67 +1,289 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel - Alimentos y Bebidas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <h1>Hotel El Refugio</h1>
+            <h1>Hotel Movich</h1>
         </div>
+
         <nav>
             <ul>
-                <li><a href="#desayuno">Desayuno</a></li>
-                <li><a href="#ebano-cena">Ebano Cena</a></li>
-                <li><a href="#ebano-almuerzo">Ebano Almuerzo</a></li>
-                <li><a href="#roomservice">Room Service</a></li>
-                <li><a href="#saman-cafe-am">Saman Café AM</a></li>
-                <li><a href="#saman-cafe-pm">Saman Café PM</a></li>
-                <li><a href="#tipsy-bird-bar">Tipsy Bird Bar</a></li>
-            </ul>
+                <li>
+                    <a href="#comidas" class="dropdown-toggle">Restaurante</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#desayuno" class="section-link" data-section="desayuno">Desayuno</a></li>
+                        <li><a href="#ebano-cena" class="section-link" data-section="ebano-cena">Ebano Cena</a></li>
+                        <li><a href="#ebano-almuerzo" class="section-link" data-section="ebano-almuerzo">Ebano
+                                Almuerzo</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#cafe" class="dropdown-toggle">Café</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#saman-cafe-am" class="section-link" data-section="saman-cafe-am">Saman Café AM</a>
+                        </li>
+                        <li><a href="#saman-cafe-pm" class="section-link" data-section="saman-cafe-pm">Saman Café PM</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#roomservice" class="section-link" data-section="roomservice">Room Service</a></li>
+                <li><a href="#tipsy-bird-bar" class="section-link" data-section="tipsy-bird-bar">Tipsy Bird Bar</a></li>
         </nav>
     </header>
 
     <main>
-        <section id="desayuno">
+        <section id="desayuno" class="form-section">
             <h2>Formulario - Desayuno</h2>
-            <form id="form-desayuno" action="enviar_correo.php" method="POST">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                
-                <label for="comentarios">Comentarios:</label>
-                <textarea id="comentarios" name="comentarios" required></textarea>
-                
+            <form id="form-desayuno-checklist" action="enviar_correo.php" method="POST">
+                <fieldset>
+                    <legend>CHECK LIST DESAYUNOS</legend>
+                    <label for="responsable">Responsable:</label>
+                    <input type="text" id="responsable" name="responsable" placeholder="Nombre del responsable"
+                        required>
+
+                    <!-- Campo para Fecha -->
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+
+                    <!-- Campo para Hora -->
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora" required>
+                    <label><br />
+                    
+                    <comment style="font-weight: normal; font-size: small;">
+                        Si hay mas de 250 huespedes NO van huevos al gusto, se saca la parrilla y se ofrecen arepas con queso
+                        Si hay mas de 150 huéspedes se montan todas las mesas del deck (para soles),
+                        Y si hay menos de  150 huéspedes se montas solo 4 mesas
+                    </comment>
+                </fieldset>
+                <fieldset>
+                    <legend>SABOR LOCAL</legend>
+                    <table>
+                        <tr>
+                            <th>CANT.</th>
+                            <th>HORARIO DE SALIDA</th>
+                            <th>6:30</th>
+                            <th>7:30</th>
+                            <th>8:30</th>
+                            <th>9:30</th>
+                            <th>OBSERVACIONES</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Salidas con traje de sabor local</td>
+                            <td><input type="checkbox" ></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Sale con lito</td>
+                            <td><input type="checkbox" ></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Sale con canasta</td>
+                            <td><input type="checkbox" ></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>LINEA CALIENTE BUFFET</legend>
+                    <comment style="font-weight: normal; font-size: small;">
+                        Luces se encienden a las 6:00 am y se apagan a las 7:00 de la mañana
+                    </comment>
+                    <table>
+                        <tr>
+                            <th>CANT.</th>
+                            <th></th>
+                            <th>cumple</th>
+                            <th>no cumple</th>
+                            <th>OBSERVACIONES</th>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Samovares électricos</td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Samovares directos: huevos grandes, cocidos y vegetales</td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Olla bruja para caldo </td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Taza de cilantro</td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Taza con cascos de limón</td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Cucharas grande de servir </td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Bases de maderas para cucharas</td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Pinzas para servir</td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Tazas caldo</td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Platos redondos</td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Cucharas caldo</td>
+                            <td><input type="text" ></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>BUFFET PANADERIA</legend>
+                    <table>
+                        <tr>
+                            <th>CANT.</th>
+                            <th>VARIEDADES DE PANES</th>
+                            <th>Cumple</th>
+                            <th>Pinza</th>
+                            <th>Hablador</th>
+                            <th>Observaciones</th>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Integral de chocolate (corporativo)</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Integral de café (corporativo)</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Integral de aceituna (corporativo)</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Integral de aceituna (corporativo)</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            
+                        </tr>
+                    </table>
+                </fieldset>
                 <button type="submit">Enviar</button>
             </form>
         </section>
 
-        <!-- Repetir la estructura del formulario para otras áreas -->
-        <section id="ebano-cena">
+
+        <section id="ebano-cena" class="form-section">
             <h2>Formulario - Ebano Cena</h2>
             <form id="form-ebano-cena" action="enviar_correo.php" method="POST">
-                <!-- Campos específicos para Ebano Cena -->
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
-                
                 <label for="comentarios">Comentarios:</label>
                 <textarea id="comentarios" name="comentarios" required></textarea>
-                
                 <button type="submit">Enviar</button>
             </form>
         </section>
 
-        <!-- Puedes agregar más secciones aquí -->
+        <section id="ebano-almuerzo" class="form-section">
+            <h2>Formulario - Ebano Almuerzo</h2>
+            <form id="form-ebano-almuerzo" action="enviar_correo.php" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Agregar más formularios para cada sección aquí -->
 
     </main>
 
     <footer>
-        <p>&copy; 2024 Hotel El Refugio. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Hotel Movich. Todos los derechos reservados.</p>
     </footer>
 
     <script src="scripts.js"></script>
 </body>
+
 </html>
