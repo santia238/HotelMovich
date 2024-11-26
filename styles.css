@@ -8,8 +8,8 @@ body {
 
 h1, h2 {
     font-family: 'Playfair Display', serif;
-    color: #333;
-    
+    color: #Efb810;
+    text-align: center;
 }
 
 /* Encabezado */
@@ -40,20 +40,65 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
+/* Estilo base para el menú */
+nav ul {
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul .dropdown-menu {
+    display: none; /* Ocultar el menú por defecto */
+    position: absolute;
+    top: 100%; /* Justo debajo del elemento principal */
+    left: 0;
+    background-color: #2a2a2a;
+    padding: 0;
+    list-style: none;
+    z-index: 1000;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul .dropdown-menu li {
+    margin: 0;
+}
+
+nav ul .dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+}
+
+nav ul .dropdown-menu li a:hover {
+    background-color: #4e3bbf;
+    color: white;
+}
+
+/* Mostrar el menú cuando se pasa el cursor */
+nav ul li:hover .dropdown-menu {
+    display: block;
+}
+
 
 /* Secciones de la página */
 main {
     padding: 20px;
 }
 
-section {
+.form-section {
+    display: none;  /* Por defecto, todas las secciones están ocultas */
     margin-bottom: 40px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    
     margin: 0 auto;
     background-color: white;
     padding: 20px;
@@ -73,6 +118,7 @@ form input, form textarea {
     border-radius: 4px;
 }
 
+
 form button {
     padding: 10px;
     background-color: #6c5ce7;
@@ -80,6 +126,39 @@ form button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+form legend {
+    font-weight: bold;
+    color: #333;
+}
+form fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+form table th, form table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+form table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+form table input[type="text"] {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 form button:hover {
