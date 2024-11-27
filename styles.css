@@ -60,6 +60,8 @@ nav ul .dropdown-menu {
     z-index: 1000;
     border-radius: 4px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    opacity: 0;
 }
 
 nav ul .dropdown-menu li {
@@ -82,6 +84,7 @@ nav ul .dropdown-menu li a:hover {
 /* Mostrar el menú cuando se pasa el cursor */
 nav ul li:hover .dropdown-menu {
     display: block;
+    opacity: 1;
 }
 
 
@@ -148,7 +151,7 @@ form table {
 form table th, form table td {
     border: 1px solid #ccc;
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 form table th {
     background-color: #f5f5f5;
@@ -171,4 +174,104 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+}
+
+/* Contenedor de los pasos */
+.step-indicators {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f3f3f3;
+    color: #777;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.step.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+.step.completed {
+    background-color: #4caf50;
+    color: white;
+}
+
+.step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 20px);
+    height: 5px;
+    background-color: #f3f3f3;
+    top: 50%;
+    left: calc(100% - 15px);
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.step.completed:not(:last-child)::after {
+    background-color: #4caf50;
+}
+
+/* Contenedor de la barra de progreso */
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+/* Barra de progreso */
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.4s ease;
+}
+
+/* Ocultar los fieldsets por defecto */
+fieldset {
+    display: none;
+}
+
+/* Mostrar el fieldset activo */
+fieldset.active {
+    display: block;
+}
+
+/* Botones */
+.navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.hidden {
+    display: none;
+}
+
+button:hover {
+    background-color: #4e3bbf;
 }
