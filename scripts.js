@@ -46,3 +46,70 @@ document.addEventListener("DOMContentLoaded", function() {
     // Mostrar la primera sección por defecto al cargar la página (Desayuno)
     showSection('desayuno');
 });
+
+document.getElementById('fecha').addEventListener('input', function() {
+    const today = new Date().toISOString().split('T')[0];
+    if (this.value < today) {
+        alert('La fecha no puede ser anterior a hoy.');
+        this.value = today;
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fieldsets = document.querySelectorAll('#form-desayuno-checklist fieldset');
+    const progressBar = document.querySelector('.progress-bar');
+    const nextButton = document.getElementById('next-button');
+    const prevButton = document.getElementById('prev-button');
+    const submitButton = document.getElementById('submit-button');
+    let currentStep = 0;
+
+    // Mostrar el primer fieldset
+    fieldsets[currentStep].classList.add('active');
+
+    // Actualizar barra de progreso
+    function updateProgressBar() {
+        const progress = ((currentStep + 1) / fieldsets.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    // Botón "Siguiente"
+    nextButton.addEventListener('click', () => {
+        if (!validateCurrentFieldset()) {
+            alert('Por favor, completa todos los campos requeridos.');
+            return;
+        }
+        fieldsets[currentStep].classList.remove('active');
+        currentStep++;
+        fieldsets[currentStep].classList.add('active');
+        updateButtons();
+        updateProgressBar();
+    });
+
+    // Botón "Anterior"
+    prevButton.addEventListener('click', () => {
+        fieldsets[currentStep].classList.remove('active');
+        currentStep--;
+        fieldsets[currentStep].classList.add('active');
+        updateButtons();
+        updateProgressBar();
+    });
+
+    // Actualizar botones
+    function updateButtons() {
+        prevButton.classList.toggle('hidden', currentStep === 0);
+        nextButton.classList.toggle('hidden', currentStep === fieldsets.length - 1);
+        submitButton.classList.toggle('hidden', currentStep !== fieldsets.length - 1);
+    }
+
+    // Validar campos del fieldset actual
+    function validateCurrentFieldset() {
+        const inputs = fieldsets[currentStep].querySelectorAll('input[required], textarea[required]');
+        return Array.from(inputs).every(input => input.value.trim() !== '');
+    }
+
+    // Inicializar barra de progreso
+    updateProgressBar();
+});
+
+
+
