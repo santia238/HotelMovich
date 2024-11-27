@@ -44,212 +44,1329 @@
     <main>
         <section id="desayuno" class="form-section">
             <h2>Formulario - Desayuno</h2>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
             <form id="form-desayuno-checklist" action="enviar_correo.php" method="POST">
-                <fieldset>
-                    <legend>CHECK LIST DESAYUNOS</legend>
-                    <label for="responsable">Responsable:</label>
-                    <input type="text" id="responsable" name="responsable" placeholder="Nombre del responsable"
-                        required>
+                
+                        <fieldset>
+                            <legend>CHECK LIST DESAYUNOS</legend>
+                            <label for="responsable">Responsable:</label>
+                            <input type="text" id="responsable" name="responsable" placeholder="Nombre del responsable"
+                                required>
 
-                    <!-- Campo para Fecha -->
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" name="fecha" required>
+                            <!-- Campo para Fecha -->
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" id="fecha" name="fecha" required>
 
-                    <!-- Campo para Hora -->
-                    <label for="hora">Hora:</label>
-                    <input type="time" id="hora" name="hora" required>
-                    <label><br />
+                            <!-- Campo para Hora -->
+                            <label for="hora">Hora:</label>
+                            <input type="time" id="hora" name="hora" required>
+                            <label><br />
+
+                                <comment style="font-weight: normal; font-size: small;">
+                                    Si hay mas de 250 huespedes NO van huevos al gusto, se saca la parrilla y se ofrecen
+                                    arepas con queso
+                                    Si hay mas de 150 huéspedes se montan todas las mesas del deck (para soles),
+                                    Y si hay menos de 150 huéspedes se montas solo 4 mesas
+                                </comment>
+                        </fieldset>
+                        <fieldset>
+                            <legend>SABOR LOCAL</legend>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th>HORARIO DE SALIDA</th>
+                                    <th>6:30</th>
+                                    <th>7:30</th>
+                                    <th>8:30</th>
+                                    <th>9:30</th>
+                                    <th>OBSERVACIONES</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Salidas con traje de sabor local</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Sale con lito</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Sale con canasta</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
                     
-                    <comment style="font-weight: normal; font-size: small;">
-                        Si hay mas de 250 huespedes NO van huevos al gusto, se saca la parrilla y se ofrecen arepas con queso
-                        Si hay mas de 150 huéspedes se montan todas las mesas del deck (para soles),
-                        Y si hay menos de  150 huéspedes se montas solo 4 mesas
-                    </comment>
-                </fieldset>
-                <fieldset>
-                    <legend>SABOR LOCAL</legend>
-                    <table>
-                        <tr>
-                            <th>CANT.</th>
-                            <th>HORARIO DE SALIDA</th>
-                            <th>6:30</th>
-                            <th>7:30</th>
-                            <th>8:30</th>
-                            <th>9:30</th>
-                            <th>OBSERVACIONES</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Salidas con traje de sabor local</td>
-                            <td><input type="checkbox" ></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Sale con lito</td>
-                            <td><input type="checkbox" ></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Sale con canasta</td>
-                            <td><input type="checkbox" ></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                    </table>
-                </fieldset>
-                <fieldset>
-                    <legend>LINEA CALIENTE BUFFET</legend>
-                    <comment style="font-weight: normal; font-size: small;">
-                        Luces se encienden a las 6:00 am y se apagan a las 7:00 de la mañana
-                    </comment>
-                    <table>
-                        <tr>
-                            <th>CANT.</th>
-                            <th></th>
-                            <th>cumple</th>
-                            <th>no cumple</th>
-                            <th>OBSERVACIONES</th>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Samovares électricos</td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Samovares directos: huevos grandes, cocidos y vegetales</td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Olla bruja para caldo </td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Taza de cilantro</td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Taza con cascos de limón</td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Cucharas grande de servir </td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Bases de maderas para cucharas</td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>-</td>
-                            <td>Pinzas para servir</td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>Tazas caldo</td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>Platos redondos</td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>Cucharas caldo</td>
-                            <td><input type="text" ></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                        </tr>
-                    </table>
-                </fieldset>
-                <fieldset>
-                    <legend>BUFFET PANADERIA</legend>
-                    <table>
-                        <tr>
-                            <th>CANT.</th>
-                            <th>VARIEDADES DE PANES</th>
-                            <th>Cumple</th>
-                            <th>Pinza</th>
-                            <th>Hablador</th>
-                            <th>Observaciones</th>
-                        </tr>
-                        <tr>
-                            <td>-</td>
-                            <td>Integral de chocolate (corporativo)</td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>-</td>
-                            <td>Integral de café (corporativo)</td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>-</td>
-                            <td>Integral de aceituna (corporativo)</td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>-</td>
-                            <td>Integral de aceituna (corporativo)</td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            
-                        </tr>
-                    </table>
-                </fieldset>
-                <button type="submit">Enviar</button>
+                
+                
+                   
+                        <fieldset>
+                            <legend>LINEA CALIENTE BUFFET</legend>
+                            <comment style="font-weight: normal; font-size: small;">
+                                Luces se encienden a las 6:00 am y se apagan a las 7:00 de la mañana
+                            </comment>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th></th>
+                                    <th>cumple</th>
+                                    <th>no cumple</th>
+                                    <th>OBSERVACIONES</th>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Samovares électricos</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Samovares directos: huevos grandes, cocidos y vegetales</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Olla bruja para caldo </td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Taza de cilantro</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Taza con cascos de limón</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Cucharas grande de servir </td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Bases de maderas para cucharas</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pinzas para servir</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>Tazas caldo</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>Platos redondos</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>Cucharas caldo</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                            <legend>BUFFET PANADERIA</legend>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th>VARIEDADES DE PANES</th>
+                                    <th>Cumple</th>
+                                    <th>Pinza</th>
+                                    <th>Hablador</th>
+                                    <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Integral de chocolate (corporativo)</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Integral de café (corporativo)</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Integral de aceituna (corporativo)</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pan Baguette (corporativo)</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pan de dulce de guayaba</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pan de queso</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pan de maiz</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pan integral</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Buñuelos</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pandebonos</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Almojabanas</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pan integral de semilla</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pan arabe</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Croissant</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Pan leche</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Torta quishe lorraine</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Croissant</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th>MERMELADAS</th>
+                                    <th>Cumple</th>
+                                    <th>Cuchara</th>
+                                    <th>Hablador</th>
+                                    <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mermelada de frutos rojos</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mermelada de frutos amarillos</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Miel</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Salsa de chocolate</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th>CEREAL</th>
+                                    <th>Cumple</th>
+                                    <th>Hablador</th>
+                                    <th>No cumple</th>
+                                    <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Dispensadores de cereal</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        
+               
+                
+                    
+                        <fieldset>
+                            <legend>PLATOS PARA DESAYUNOS</legend>
+                            <table>
+                                <tr></tr>
+                                <th>CANT.</th>
+                                <th>OBJETOS</th>
+                                <th>Cumple</th>
+                                <th>No cumple</th>
+                                <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>120</td>
+                                    <td>Platos<br />(20 platos por fila, mantel base debe estar limpio sin arrugas)</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                            <legend>ZONA DE JUGOS NATURALES</legend>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th>OBJETOS</th>
+                                    <th>Cumple</th>
+                                    <th>No cumple</th>
+                                    <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Dispensador de jugo natural (revisar limpieza)</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Jarra con agua</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Bandeja con capacidad de 24 vasos de cristal (deben estar óptimos en su
+                                        brillado)</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                   
+                
+                    
+                        <fieldset>
+                            <legend>ZONA DE FRUTOS SECOS</legend>
+                            <table>
+                                <tr></tr>
+                                <th>CANT.</th>
+                                <th>OBJETOS</th>
+                                <th>Cumple</th>
+                                <th>Cuchara</th>
+                                <th>Hablador</th>
+                                <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato con mani</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato con pasas</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato con nueces</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato con almendras</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dispensador de chia</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dispensador de avena</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dispensador de coco</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dispensador de linaza</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Tomates encurtidos</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Cebolla encurtida</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Aceite balsámico</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Aceite de oliva</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                            <legend>MESA DE MICE AND PLACE</legend>
+                            <table>
+                                <tr></tr>
+                                <th>CANT.</th>
+                                <th>OBJETOS</th>
+                                <th>Cumple</th>
+                                <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Paquete de servilletas de lujo</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>70</td>
+                                    <td>Servilletas de tela con juego de cubiertos</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>Pocillos que esten óptimos sin picaduras</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Charola con cucharas, tenedores y cuchillos</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>Platos base para pocillo</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                       
+               
+                   
+                        <fieldset>
+                            <legend>PERIÓDICOS</legend>
+                            <table>
+                                <tr></tr>
+                                <th>CANT.</th>
+                                <th>OBJETOS</th>
+                                <th>Cumple</th>
+                                <th>No cumple</th>
+                                <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Base para periodicos (debe estar limpia sin peladuras)</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Periodico EL TIEMPO con la fecha del dia</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Periodico LR con la fecha del dia</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                            <legend>ENTRADA (ATRIL)</legend>
+                            <table>
+                                <tr></tr>
+                                <th>CANT.</th>
+                                <th>OBJETOS</th>
+                                <th>Cumple</th>
+                                <th>No cumple</th>
+                                <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Atril que este limpio y en perfecto estado (sin peladuras)</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Guia de hbaitaciones</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Eventos del dia</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Teléfono</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pasa cuentas</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr></tr>
+                                <td>1</td>
+                                <td>Lapicero</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Datofono (Revisar que este cargado)</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Rollo para datafono</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                   
+                
+                    
+                        <fieldset>
+                            <legend>BUFFET FRIO</legend>
+                            <table>
+                                <tr></tr>
+                                <th>CANT.</th>
+                                <th>OBJETOS</th>
+                                <th>Cumple</th>
+                                <th>No cumple</th>
+                                <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Envases de yogurt de (fresa, mora, melocoton, natural)</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Envase de leche de almendras</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Envase de leche de deslactosada</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Envase de jugo verde</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr></tr>
+                                <th>CANT.</th>
+                                <th>FRUTAS PORCIONADAS</th>
+                                <th>Cumple</th>
+                                <th>Pinza</th>
+                                <th>Hablador</th>
+                                <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato negro con uvas</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato negro con piña</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato negro con melón</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr></tr>
+                                <td>1</td>
+                                <td>Plato negro con sandia</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato negro con papaya</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr></tr>
+                                <td>1</td>
+                                <td>Plato negro con mandarina</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato negro con ciruela</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato negro con uchua</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr></tr>
+                                <th>CANT.</th>
+                                <th>FRUTAS</th>
+                                <th>Cumple</th>
+                                <th>No cumple</th>
+                                <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Frutas de mano</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr></tr>
+                                <th>CANT.</th>
+                                <th>VEGETALES</th>
+                                <th>Cumple</th>
+                                <th>Pinza</th>
+                                <th>Hablador</th>
+                                <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato con lechuga</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato con pepino</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato con tomate en rodajas</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th>CHARCUTERIA</th>
+                                    <th>Cumple</th>
+                                    <th>Pinza</th>
+                                    <th>Hablador</th>
+                                    <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td style="text-align: center;">Tabla de charcuteria con:<br />
+                                        Queso sabana<br />
+                                        Queso mozzarella<br />
+                                        Queso campesino<br />
+                                        Jamón serrano<br />
+                                        Jamón de cerdo<br />
+                                        Jamón de pavo<br />
+                                        Peperoni<br />
+                                        Salami<br /></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Plato de gelatina</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Tarro de guacamole</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Tarro de salsa cheddar</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Parfait</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Salpicón</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>Platos con fruta</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                            <legend>ZONA BEBIDAS CALIENTES</legend>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th>BEBIDAS</th>
+                                    <th>Cumple</th>
+                                    <th>No cumple</th>
+                                    <th>Observaciones</th>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Jarra para bebidas calientes</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Jarra de chocolate</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Jarra de leche</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        
+                    
+                        <fieldset>
+                            <legend>ZONA DE TERMOS</legend>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th>TERMO</th>
+                                    <th>CUMPLE</th>
+                                    <th>NO CUMPLE</th>
+                                    <th>OBSERVACIONES</th>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Termos par café</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Termos de servicio con leche</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Termos de servicio con chocolate</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr></tr>
+                                <td>2</td>
+                                <td>Termos de servicio con agua caliente</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                            <legend>MESA DE DESAYUNOS</legend>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th>OBJETOS</th>
+                                    <th>CUMPLE</th>
+                                    <th>NO CUMPLE</th>
+                                    <th>OBSERVACIONES</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Posa vasos</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Individual de tela</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>L.I</td>
+                                    <td>Servileta de tela retangular, tenedor para fruta, tenedor para plato fuerte.
+                                    </td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>L.D</td>
+                                    <td>Pocillo sobre plato boca abajo con oreja a la derecha, plato para<br />
+                                        pocillo, cucharita tintera sobre el plato base, pala manquillera,<br />
+                                        cuchillo para fruta, cuchillo para plato fuerte, distancia de<br />
+                                        cubiertos y servilleta de tela (2 dedos de distancia individual)</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Salero</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pimentero</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Azucarero con:<br />
+                                        6 sobres instacrem<br />
+                                        6 sobre de azúcar <br />
+                                        4 sobres de splend</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Florero</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Servilleta de tela rectangular (debe estar impecable de limpieza y sin arrugas)
+                                    </td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    
+                
+                   
+                        <fieldset>
+                            <legend>GENERAL</legend>
+                            <table>
+                                <tr>
+                                    <th>CANT.</th>
+                                    <th></th>
+                                    <th>CUMPLE</th>
+                                    <th>NO CUMPLE</th>
+                                    <th>OBSERVACIONES</th>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Música</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Aire Acondicionado</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Aseo</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Luces</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Plantas regadas</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <fieldset>
+                            <legend>UNIFORME</legend>
+                            <table>
+                                <tr>
+                                    <th>HOMBRE</th>
+                                    <th>CUMPLE</th>
+                                    <th>NO CUMPLE</th>
+                                    <th>OBSERVACIONES</th>
+                                </tr>
+                                <tr>
+                                    <td><b>CABELLO:</b> Corto, limpio y ordenado</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>BARBA:</b> Debe estar bien rasurada</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>UNIFORME:</b> Limpio y planchado</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>DELANTAL:</b> En buen estado y limpio, sin remiendos o desgastado</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>GAFETE:</b> Lado izquierdo del pecho, ultima predenda visible.</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>CARNET:</b> Parte inferior del uniforme, sobre el delantal</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>UÑAS:</b> Cortas y limpias</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>ZAPATOS:</b> Limpios y lustrados</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>ACCESORIOS Y PROHIBIDOS:</b> Relojes grandes o de colores</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>PROHIBIDO:</b> El uso de perfumes</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>PROHIBIDO:</b> El uso de celular</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th>MUJER</th>
+                                    <th>CUMPLE</th>
+                                    <th>NO CUMPLE</th>
+                                    <th>OBSERVACIONES</th>
+                                </tr>
+                                <tr>
+                                    <td><b>CABELLO:</b> Limpio y recodigo, cubierto, cara despejada, accesorios</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>MAQUILLAJE:</b> Obligatorio, discreto</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>ARETES:</b> Tamaño: menos 1cm, obligatorio uno en cada oreja</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>UNIFORME:</b> Limpio y planchado</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>DELANTAL:</b> En buen estado y limpio, sin remiendos o desgastado</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>GAFETE:</b> Lado izquierdo del pecho, ultima predenda visible.</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>CARNET:</b> Parte inferior del uniforme, sobre el delantal</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>UÑAS:</b> Cortas y limpias</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>ZAPATOS:</b> Limpios y lustrados</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>ACCESORIOS Y PROHIBIDOS:</b> Relojes grandes o de colores</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>PROHIBIDO:</b> El uso de perfumes</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>PROHIBIDO:</b> El uso de celular</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <div class="navigation">
+                            <button type="button" id="prev-button" class="hidden">Anterior</button>
+                            <button type="button" id="next-button">Siguiente</button>
+                            <button type="submit" id="submit-button" class="hidden">Enviar</button>
+                        </div>
+                   
+                </div>
+
+                
             </form>
+
+        
         </section>
 
 
