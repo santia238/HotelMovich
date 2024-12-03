@@ -275,3 +275,15 @@ button.hidden {
 button:hover {
     background-color: #4e3bbf;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
