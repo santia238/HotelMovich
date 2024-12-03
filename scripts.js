@@ -297,6 +297,53 @@ document.addEventListener("DOMContentLoaded", function () {
     updateProgressBarTipsyBar();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const fieldsetsRoomService = document.querySelectorAll('#form-roomservice fieldset');
+    const progressBarRoomService = document.getElementById('progress-bar-roomservice');
+    const nextButtonRoomService = document.getElementById('next-button-roomservice');
+    const prevButtonRoomService = document.getElementById('prev-button-roomservice');
+    const submitButtonRoomService = document.getElementById('submit-button-roomservice');
+    let currentStepRoomService = 0;
+
+    // Mostrar el primer fieldset
+    fieldsetsRoomService[currentStepRoomService].classList.add('active');
+
+    // Actualizar barra de progreso
+    function updateProgressBarRoomService() {
+        const progress = ((currentStepRoomService + 1) / fieldsetsRoomService.length) * 100;
+        progressBarRoomService.style.width = `${progress}%`;
+    }
+
+    // Botón "Siguiente"
+    nextButtonRoomService.addEventListener('click', () => {
+        fieldsetsRoomService[currentStepRoomService].classList.remove('active');
+        currentStepRoomService++;
+        fieldsetsRoomService[currentStepRoomService].classList.add('active');
+        updateButtonsRoomService();
+        updateProgressBarRoomService();
+    });
+
+    // Botón "Anterior"
+    prevButtonRoomService.addEventListener('click', () => {
+        fieldsetsRoomService[currentStepRoomService].classList.remove('active');
+        currentStepRoomService--;
+        fieldsetsRoomService[currentStepRoomService].classList.add('active');
+        updateButtonsRoomService();
+        updateProgressBarRoomService();
+    });
+
+    // Actualizar botones
+    function updateButtonsRoomService() {
+        prevButtonRoomService.classList.toggle('hidden', currentStepRoomService === 0);
+        nextButtonRoomService.classList.toggle('hidden', currentStepRoomService === fieldsetsRoomService.length - 1);
+        submitButtonRoomService.classList.toggle('hidden', currentStepRoomService !== fieldsetsRoomService.length - 1);
+    }
+
+    // Inicializar barra de progreso
+    updateProgressBarRoomService();
+});
+ 
+
 
 
 
