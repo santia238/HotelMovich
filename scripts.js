@@ -1,16 +1,16 @@
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(this);
-        fetch(this.action, { method: 'POST', body: formData })
-            .then(response => response.text())
-            .then(() => {
-                alert('Formulario enviado con éxito');
-                this.reset();
-            })
-            .catch(error => console.error('Error:', error));
-    });
-});
+// document.querySelectorAll('form').forEach(form => {
+//     form.addEventListener('submit', function(event) {
+//         event.preventDefault();
+//         const formData = new FormData(this);
+//         fetch(this.action, { method: 'POST', body: formData })
+//             .then(response => response.text())
+//             .then(() => {
+//                 alert('Formulario enviado con éxito');
+//                 this.reset();
+//             })
+//             .catch(error => console.error('Error:', error));
+//     });
+// });
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -110,6 +110,63 @@ document.addEventListener("DOMContentLoaded", function () {
     // Inicializar barra de progreso
     updateProgressBar();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fieldsets = document.querySelectorAll('#form-ebano-cena fieldset');
+    const progressBar = document.querySelector('.progress-bar');
+    const nextButton = document.getElementById('next-button');
+    const prevButton = document.getElementById('prev-button');
+    const submitButton = document.getElementById('submit-button');
+    let currentStep = 0;
+
+    // Mostrar el primer fieldset
+    fieldsets[currentStep].classList.add('active');
+
+    // Actualizar barra de progreso
+    function updateProgressBarEbanoCena() {
+        const progress = ((currentStep + 1) / fieldsets.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    // Botón "Siguiente"
+    nextButton.addEventListener('click', () => {
+        if (!validateCurrentFieldsetEbanoCena()) {
+            alert('Por favor, completa todos los campos requeridos.');
+            return;
+        }
+        fieldsets[currentStep].classList.remove('active');
+        currentStep++;
+        fieldsets[currentStep].classList.add('active');
+        updateButtonsEbanoCena();
+        updateProgressBarEbanoCena();
+    });
+
+    // Botón "Anterior"
+    prevButton.addEventListener('click', () => {
+        fieldsets[currentStep].classList.remove('active');
+        currentStep--;
+        fieldsets[currentStep].classList.add('active');
+        updateButtonsEbanoCena();
+        updateProgressBarEbanoCena();
+    });
+
+    // Actualizar botones
+    function updateButtonsEbanoCena() {
+        prevButton.classList.toggle('hidden', currentStep === 0);
+        nextButton.classList.toggle('hidden', currentStep === fieldsets.length - 1);
+        submitButton.classList.toggle('hidden', currentStep !== fieldsets.length - 1);
+    }
+
+    // Validar campos del fieldset actual
+    function validateCurrentFieldsetEbanoCena() {
+        const inputs = fieldsets[currentStep].querySelectorAll('input[required], textarea[required]');
+        return Array.from(inputs).every(input => input.value.trim() !== '');
+    }
+
+    // Inicializar barra de progreso
+    updateProgressBarEbanoCena();
+});
+
 
 
 
